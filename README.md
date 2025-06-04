@@ -32,6 +32,9 @@ Este repositorio es una demo básica de un proyecto dbt utilizando DuckDB como m
 ## Instalación con `uv`
 
 ```bash
+git clone https://github.com/Ignacio-Ibarra/dbt-duckdb-demo.git
+cd dbt-duckdb-demo
+curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv
 source .venv/bin/activate
 uv pip install --no-build-isolation -r pyproject.toml
@@ -67,14 +70,15 @@ dbt debug .
 ```bash
 dbt run
 ```
-Esto crea una carpeta `target/` donde se guarda el grafo de cómputo en un archivo `graph.pickle`
+Busca el archivo `dbt_project.yml` para saber donde tiene que ir a buscar cosas 
+Esto crea una carpeta `target/` donde se guarda el grafo de ejecuciones SQL en un archivo `graph.pickle`
 
 ## Resultado
 
-- Se crea un archivo `dbt.duckdb` con dos vistas:
+- Se crea un archivo `dev.duckdb` con dos vistas:
   - `empleados_base`
   - `empleados_filtrados` (solo quienes ganan más de 100000)
 
 ## Test sobre tablas. 
 
-- Con `dbt test` puedo correr test sobre tablas. Es necesario crear un archivo yml. 
+- Con `dbt test` puedo correr test sobre tablas. Es necesario crear un archivo `schema.yml`. 
