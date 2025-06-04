@@ -1,0 +1,13 @@
+[project]
+name = "dbt_duckdb_demo"
+version = "0.1.0"
+description = "Demo de dbt con DuckDB"
+authors = [{ name = "Tu Nombre", email = "tunombre@ejemplo.com" }]
+dependencies = [
+    "dbt-duckdb>=1.7.0"
+]
+requires-python = ">=3.8"
+
+[tool.uv]
+# opcional, podés especificar extras o grupos si querés
+

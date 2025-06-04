@@ -1,0 +1,12 @@
+name: dbt_duckdb_demo
+version: '1.0'
+config-version: 2
+
+profile: dbt_duckdb_demo
+
+model-paths: ["models"]
+seed-paths: ["seed"]
+
+models:
+  dbt_duckdb_demo:
+    +materialized: view

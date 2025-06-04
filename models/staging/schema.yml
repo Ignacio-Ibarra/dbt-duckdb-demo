@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: empleados_base
+    description: "Modelo base que carga la tabla empleados"
+    columns:
+      - name: salario
+        description: "El salario no debe ser nulo"
+        tests:
+          - not_null
+      - name: id
+        description: "Debe haber IDs únicos"
+        tests:
+          - unique
